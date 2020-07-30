@@ -1,6 +1,9 @@
 # Add  code here!
 def prime?(integer)
-  num_squared = integer * integer
-  num_array = [2..num_squared]
-  return num_array.any? { |int| integer.to_i % int.to_i == 0 }
+  if integer < 2
+    return false
+  else
+    num_check = [2..integer-1]
+    num_check.all? { |number| integer % number != 0 }
+  end
 end
